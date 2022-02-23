@@ -20,26 +20,8 @@ class Persona {
         console.log("implementación de comportamiento para la clase");
     }
 }
-class A {
-    saludar() {
-        console.log("Hola soy clase A");
-    }
-}
-class B extends A {
-    saludarB() {
-        console.log("Hola soy B");
-    }
-    saludar() {
-        console.log("Hola soy clase B sobreescribiendo A");
-    }
-}
-let objeto = new B();
-objeto.saludar();
-objeto.saludarB();
-let objetoA = new A();
-objetoA.saludar();
-let personaNueva = new Persona("Lucía Martinez Illia", "Desarrolladora Frontend", "Córdoba, Argentina");
-personaNueva.FullName = "Honolulu Zenitram";
+let personaNueva = new Persona("Lucía Martinez Illia", "Full Stack Developer Jr", "Córdoba, Argentina");
+// personaNueva.FullName="Honolulu Zenitram";
 personaNueva.toString();
 document.getElementById("fullName").innerHTML = personaNueva.FullName;
 document.getElementById("position").innerHTML = personaNueva.position;
