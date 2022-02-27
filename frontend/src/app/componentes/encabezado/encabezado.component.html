@@ -1,0 +1,26 @@
+<header>
+    <nav class="navbar navbar-default navbar-expand-lg col-md-12" role="navigation" id="portfolioNavBar">
+        <div class="container-fluid">
+            <a class="navbar-brand" target="_blank"
+                href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"><img
+                    src="./assets/imagenes/APLogo-20-20.png" style="width: 20%;" alt="Argentina Programa -
+      #YoProgramo."></a>
+            <a href="#" class="nav-enlace">. IG .<i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="nav-enlace">. LI .<i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="nav-enlace">.. Log In ..</a>
+        </div>
+    </nav>
+    <div>
+        <div class="containerdiv" style="position: relative; left: 0; top: 0;">
+            <img class="banner" src="./assets/imagenes/banner1.jpg" style="width:100%;height:400px;"
+                alt="Foto de portada" />
+            <img [src]="persona.image" class="cornerimage" style="width: 220px;;height:220px;"
+                alt="Foto de Lucia Martinez" />
+        </div>
+    </div>
+    <div>
+        <h1 id="fullName"><strong>{{persona.fullName}}</strong></h1>
+        <p id="position"><strong>{{persona.position}} </strong> </p>
+        <p id="ubication">{{persona.ubication}}</p>
+    </div>
+</header>
