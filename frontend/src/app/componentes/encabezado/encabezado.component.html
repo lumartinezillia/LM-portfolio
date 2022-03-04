@@ -22,5 +22,60 @@
         <h1 id="fullName"><strong>{{persona.fullName}}</strong></h1>
         <p id="position"><strong>{{persona.position}} </strong> </p>
         <p id="ubication">{{persona.ubication}}</p>
+        <button *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#modalEncabezado">Editar</button>
     </div>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="modalEncabezado" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar encabezado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Apellido y Nombre</label>
+                        <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp"
+                            formControlName="fullName">
+                        <div *ngIf="fullName?.invalid && (fullName?.dirty || fullName?.touched)">
+                            <div *ngIf="fullName?.errors?.['required']" class="text-danger">
+                                El Apellido y Nombre es obligatorio.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="position" class="form-label">Posición</label>
+                        <input type="text" class="form-control" id="position" aria-describedby="emailHelp"
+                            formControlName="position">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ubication" class="form-label">Lugar de Residencia</label>
+                        <input type="email" class="form-control" id="ubication" aria-describedby="emailHelp"
+                            formControlName="ubication">
+                    </div>
+                    <div class="mb-3">
+                        <label for="url" class="form-label">URL de la imágen</label>
+                        <input type="text" class="form-control" id="url" aria-describedby="urlHelp"
+                            formControlName="url">
+                        <div *ngIf="url?.invalid && (url?.dirty || url?.touched)">
+                            <div *ngIf="url?.errors?.['required']" class="text-danger">
+                                La URL es obligatoria.
+                            </div>
+                            <div *ngIf="url?.errors?.['pattern']" class="text-danger">
+                                El formato de la URL es inválido.
+                            </div>
+                        </div>
+                        <div id="emailHelp" class="form-text">URL de imágen de perfil</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-primary" (click)="guardarEncabezado()">Guardar</button>
+            </div>
+        </div>
+    </div>

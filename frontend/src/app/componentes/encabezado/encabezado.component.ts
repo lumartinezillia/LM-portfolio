@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MiPortfolioService } from 'src/app/servicios/mi-portfolio.service';
+import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,15 +8,52 @@ import { MiPortfolioService } from 'src/app/servicios/mi-portfolio.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
+  persona: any;
+  usuarioAutenticado: boolean = true;
+  form!: FormGroup;
 
-  persona:any;
-  constructor(private miServicioDePortfolio: MiPortfolioService) { }
+  constructor(private miServicio: PersonaService, private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      fullName: ['', [Validators.required]],
+      position: ['', [Validators.required]],
+      ubication: ['', [Validators.required]],
+      url: ['', [Validators.required, Validators.pattern('https?://.+')]]
+    })
+  }
 
   ngOnInit(): void {
-    this.miServicioDePortfolio.obtenerDatosPersona().subscribe(data => {
+    this.miServicio.obtenerDatosPersona().subscribe(data => {
       console.log(data);
-      this.persona=data["Persona"];
+      this.persona = data["Persona"];
     });
   }
 
+  guardarEncabezado() {
+    if (this.form.valid) {
+      //llamar a un servicio para enviar los datos
+    }
+    else {
+      this.form.markAllAsTouched();
+      alert("Hay campos no válidos");
+    }
+  }
+
+
+  //Propiedades
+
+  get fullName() {
+    return this.form.get("fullName");
+  }
+
+  get position() {
+    return this.form.get("position");
+  }
+
+  get ubication() {
+    return this.form.get("ubication");
+  }
+
+  get url() {
+    return this.form.get("url");
+  }
 }

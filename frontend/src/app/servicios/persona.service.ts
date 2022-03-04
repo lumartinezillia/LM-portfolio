@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MiPortfolioService {
+export class PersonaService {
 
   constructor(private http: HttpClient) {
     console.log("El servicio mi portfolio está corriendo");
@@ -15,7 +15,5 @@ export class MiPortfolioService {
     return this.http.get('./assets/data/persona.json');
   }
 
-  obtenerDatosEducacion():Observable<any>{
-    return this.http.get('./assets/data/educacion.json');
-  }
+
 }
