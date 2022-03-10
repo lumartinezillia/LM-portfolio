@@ -1,5 +1,7 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { Persona } from 'src/app/entidades/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
@@ -17,7 +19,7 @@ export class EncabezadoComponent implements OnInit {
       fullName: ['', [Validators.required]],
       position: ['', [Validators.required]],
       ubication: ['', [Validators.required]],
-      url: ['', [Validators.required, Validators.pattern('https?://.+')]]
+      url: ['', [Validators.required/*, Validators.pattern('https?://.+')*/]]
     })
   }
 
@@ -30,7 +32,17 @@ export class EncabezadoComponent implements OnInit {
 
   guardarEncabezado() {
     if (this.form.valid) {
-      //llamar a un servicio para enviar los datos
+      let personaEditar = new Persona(this.form.controls["fullName"].value, this.form.controls["position"].value,
+        this.form.controls["ubication"].value, this.form.controls["url"].value);
+      this.miServicio.editarDatosPersona(personaEditar).subscribe(data => {
+        // FALTA modificar el encabezado con los nuevos datos.
+        this.persona = personaEditar;
+        this.form.reset();
+        document.getElementById("cerrarModalEncabezado")?.click();
+      },
+        error => {
+          alert("Ups no se pudo actiualizar. Por favor, intente nuevamente o contacte al administrador");
+        });
     }
     else {
       this.form.markAllAsTouched();
@@ -38,6 +50,13 @@ export class EncabezadoComponent implements OnInit {
     }
   }
 
+  mostrarDatosEncabezado() {
+    this.form.get("fullName")?.setValue(this.persona.fullName);
+    this.form.get("position")?.setValue(this.persona.position);
+    this.form.get("ubication")?.setValue(this.persona.ubication);
+    this.form.get("url")?.setValue(this.persona.image);
+
+  }
 
   //Propiedades
 
@@ -57,3 +76,7 @@ export class EncabezadoComponent implements OnInit {
     return this.form.get("url");
   }
 }
+function msg(msg: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+

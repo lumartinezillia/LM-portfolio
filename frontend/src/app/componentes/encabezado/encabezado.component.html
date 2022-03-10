@@ -23,7 +23,7 @@
         <p id="position"><strong>{{persona.position}} </strong> </p>
         <p id="ubication">{{persona.ubication}}</p>
         <button *ngIf="usuarioAutenticado" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#modalEncabezado">Editar</button>
+            data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
     </div>
 </header>
 
@@ -61,20 +61,20 @@
                         <label for="url" class="form-label">URL de la imágen</label>
                         <input type="text" class="form-control" id="url" aria-describedby="urlHelp"
                             formControlName="url">
-                        <div *ngIf="url?.invalid && (url?.dirty || url?.touched)">
+                        <!--<div *ngIf="url?.invalid && (url?.dirty || url?.touched)">
                             <div *ngIf="url?.errors?.['required']" class="text-danger">
                                 La URL es obligatoria.
                             </div>
                             <div *ngIf="url?.errors?.['pattern']" class="text-danger">
                                 El formato de la URL es inválido.
                             </div>
-                        </div>
+                        </div>-->
                         <div id="emailHelp" class="form-text">URL de imágen de perfil</div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <button type="button" id="cerrarModalEncabezado" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
                 <button type="button" class="btn btn-primary" (click)="guardarEncabezado()">Guardar</button>
             </div>
         </div>
