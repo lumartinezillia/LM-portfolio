@@ -32,6 +32,13 @@
       "ubication": "Buenos Aires (Argentina)",
       "image": "./assets/imagenes/foto de perfil.jpg",
       "id": 5
+    },
+    {
+      "fullName": "Santi O Korovsky",
+      "position": "músico frontend",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 6
     }
   ],
   "comments": [
