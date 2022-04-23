@@ -1,11 +1,12 @@
 package javaapplicationprueba;
 
 public abstract class Persona {
+
     //Definir los atributos
     private int id;
-   private String nombre;
+    private String nombre;
     private String apellido;
-   private String dni;
+    private String dni;
 
     //Crear constructor
     public Persona(int id, String nombre, String apellido, String dni) {
@@ -14,12 +15,11 @@ public abstract class Persona {
         this.apellido = apellido;
         this.dni = dni;
     }
-    
-    public Persona(){
-            }
-    
-    //Definir los métodos getter y setter
 
+    public Persona() {
+    }
+
+    //Definir los métodos getter y setter
     public int getId() {
         return id;
     }
@@ -48,10 +48,8 @@ public abstract class Persona {
         this.dni = dni;
     }
 
-                
-    
     //Definir los métodos
-    public void saludar(){
+    public void saludar() {
         System.out.println("Bienvenido, Soy " + nombre);
     }
 }

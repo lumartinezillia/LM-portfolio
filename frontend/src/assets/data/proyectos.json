@@ -1,0 +1,28 @@
+{
+	"proyecto": [
+		{
+			"proyect": "Argentina programa - Mi portfolio",
+			"technologies": "Html, Css, JavaScript, Angular, Boostrap, Java, REST, Git",
+			"img": "https://www.seekpng.com/png/detail/111-1112827_por-isso-opte-por-portfolio-image-my-portfolio.png",
+			"link": "Sistemas Computacionales",
+			"start": "2019",
+			"end": "2023"
+		},
+		{
+			"proyect": "proyecto 2",
+			"technologies": "python, django",
+			"img": "https://cosasdedevs.com/media/sections/images/python.png",
+			"link": "Desarrollo de Software",
+			"start": "2014",
+			"end": "2018"
+		},
+		{
+			"proyect": "proyecto 3",
+			"technologies": "JIRA",
+			"img": "https://signe.gruposancorseguros.com/images/atlassian-jira-logo-large.png",
+			"link": "Electronica, comunicacion y sistemas de control",
+			"start": "2012",
+			"end": "2014"
+		}
+	]
+}
