@@ -1,0 +1,15 @@
+<section>
+  <h1>Proyectos</h1>
+  <div class="container-fluid">
+    <div *ngFor="let item of proyecto" class="row mb-3">
+      <div class="col-2">
+        <img [src]="item.img" style="background-color: rgb(81, 146, 124);" class="img-fluid" alt="Imágen estudio 1 Argentina Programa -
+        #YoProgramo.">
+      </div>
+      <div class="col">
+        <h2>{{item.proyect}}</h2>
+        <p>{{item.technologies}}</p>
+      </div>
+    </div>
+  </div>
+</section>

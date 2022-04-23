@@ -1,0 +1,14 @@
+<section>
+    <h1>Hard & Soft Skills</h1>
+    <div class="container-fluid">
+      <div *ngFor="let item of skills" class="row mb-3">
+        <div class="col-2">
+          <img [src]="item.img" class="img-fluid" alt="Porcentaje de conocimiento1">
+        </div>
+        <div class="col">
+          <h2>{{item.skill}}</h2>
+          <p>{{item.percentage}}</p>
+        </div>
+      </div>
+    </div>
+  </section>

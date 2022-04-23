@@ -1,0 +1,18 @@
+{
+	"projects": [
+		{
+			"company": "Hotel Piedras Dulces",
+			"job": "Recepcionista",
+			"img": "https://getlogo.net/wp-content/uploads/2021/04/nyx-hotels-logo-vector.png",
+			"start": "2019",
+			"end": "2023"
+		},
+		{
+			"company": "Circo Beat",
+			"job": "QA Junior",
+			"img": "https://www.trecebits.com/wp-content/uploads/2015/09/google.jpg",
+			"start": "2014",
+			"end": "2018"
+		}
+	]
+}
