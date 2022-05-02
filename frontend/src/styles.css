@@ -3,6 +3,7 @@ body {
   font-family: monospace;
   background-color: linen;
   margin: 10px;
+  align-content:center;
 }
 
 section {
@@ -15,6 +16,7 @@ section {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  align-content:center
 }
 /*.titulo {
     font-family: Impact, Charcoal, sans-serif;
@@ -32,6 +34,9 @@ section {
 section h1 {
   color: cadetblue;
   margin-left: 35px;
+  align-content:center
+
+  
 }
 h2 {
   font-size: x-large;

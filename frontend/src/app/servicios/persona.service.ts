@@ -8,16 +8,17 @@ import { Persona } from '../entidades/persona';
 })
 export class PersonaService {
 
-  constructor(private http: HttpClient) {
+  constructor(private httpService: HttpClient) {
     console.log("El servicio mi portfolio está corriendo");
   }
 
   obtenerDatosPersona(): Observable<any> {
-    return this.http.get('./assets/data/persona.json');
+    return this.httpService.get('./assets/data/persona.json');
   }
 
+  //se manda la dir al server/db y el objeto que contiene los datos.
   editarDatosPersona(persona: Persona): Observable<any> {
-    return this.http.post('http://localhost:3000/posts', persona);
+    return this.httpService.post('http://localhost:3000/posts', persona);
   }
 
 }

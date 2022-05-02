@@ -39,6 +39,13 @@
       "ubication": "Buenos Aires (Argentina)",
       "image": "./assets/imagenes/foto de perfil.jpg",
       "id": 6
+    },
+    {
+      "job": "Recepcionista",
+      "company": "Hotel",
+      "start": "2012",
+      "end": "2015",
+      "id": 7
     }
   ],
   "comments": [

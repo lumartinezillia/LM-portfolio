@@ -37,7 +37,9 @@ export class EncabezadoComponent implements OnInit {
       this.miServicio.editarDatosPersona(personaEditar).subscribe(data => {
         // FALTA modificar el encabezado con los nuevos datos.
         this.persona = personaEditar;
+        //deja el form control en blanco luego de guardar)
         this.form.reset();
+        //para cerrar el modal usamos las propiedades del DOM
         document.getElementById("cerrarModalEncabezado")?.click();
       },
         error => {
