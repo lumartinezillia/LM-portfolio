@@ -2,12 +2,9 @@
     "Persona":
         {
             "fullName": "Santi Korovsky",
-            "dateOfBirth": "15/03/1980",
             "aboutMe": "Matemático, físico y humorista argentino",
             "mail": "santi@gmail.com",
-            "backImage": "",
-            "image": "./assets/imagenes/foto de perfil.jpg",
+            "image": "https://www.blixt.tv/wp-content/uploads/2018/10/Foto-para-empresas-05-460x295.jpg",
             "position": "pediatra",
-            "ubication":"Buenos Aires (Argentina)"
-        }
+            "ubication":"Buenos Aires (Argentina)"        }
 }

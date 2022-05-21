@@ -1,5 +1,15 @@
 <section>
-  <h1>Educación</h1>
+  <div class="container-fluid ">
+    <div class="row mb-3">
+      <div class="col">
+        <h1>Educación</h1>
+      </div>
+      <div class="col">
+        <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
+        data-bs-target="#modalCrearEducacion" >Crear</button>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid ">
     <div *ngFor="let item of educacion" class="row mb-3">
       <div class="col-2">
@@ -9,16 +19,20 @@
       <div class="col">
         <h2>{{item.title}}</h2>
         <p>{{item.school}}</p>
-        <p>{{item.start}}</p>
-        <p>{{item.end}}</p>
+        <p>{{item.start}} - {{item.end}}</p>
+        <p></p>
       </div>
-      <div class="col"><button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-          data-bs-target="#modalEducacion" (click)="mostrarDatosEducacion()">Editar</button></div>
+      <div class="col">
+        <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
+          data-bs-target="#modalEducacion" (click)="mostrarDatosEducacion(item)">Editar</button>
+        <button *ngIf="usuarioAutenticado" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+          data-bs-target="#modalAlerta" (click)="eliminarEducacion(item)">Eliminar</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Modal -->
+<!-- Modal Editar educacion-->
 <div class="modal fade" id="modalEducacion" tabindex="-1" aria-labelledby="modalEducacion" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -27,7 +41,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="form">
+        <form [formGroup]="form" ng-submit="guardarEducacion(educacion.item)">
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" aria-describedby="idHelp" formControlName="id">
+          </div>
+          <div class="mb-3">
+            <label for="idPersona" class="form-label">Id Persona</label>
+            <input type="text" class="form-control" id="idPersona" aria-describedby="idPersonaHelp"
+              formControlName="idPersona">
+          </div>
           <div class="mb-3">
             <label for="title" class="form-label">Título</label>
             <input type="text" class="form-control" id="title" aria-describedby="titleHelp" formControlName="title">
@@ -35,22 +58,29 @@
               <div *ngIf="title?.errors?.['required']" class="text-danger">
                 El título o curso es obligatorio.
               </div>
-            </div>
-          </div>-->
-            <div class="mb-3">
-              <label for="school" class="form-label">Entidad educativa</label>
-              <input type="text" class="form-control" id="school" aria-describedby="schoolHelp"
-                formControlName="school">
-            </div>
-            <div class="mb-3">
-              <label for="start" class="form-label">Año de inicio</label>
-              <input type="text" class="form-control" id="start" aria-describedby="startHelp" formControlName="start">
-            </div>
-            <div class="mb-3">
-              <label for="end" class="form-label">Año de finalización</label>
-              <input type="text" class="form-control" id="end" aria-describedby="endHelp" formControlName="end">
-              <div id="emailHelp" class="form-text">Indicar año</div>
-            </div>
+            </div>-->
+          </div>
+          <div class="mb-3">
+            <label for="school" class="form-label">Entidad educativa</label>
+            <input type="text" class="form-control" id="school" aria-describedby="schoolHelp" formControlName="school">
+          </div>
+          <div class="mb-3">
+            <label for="start" class="form-label">Año de inicio</label>
+            <input type="text" class="form-control" id="start" aria-describedby="startHelp" formControlName="start">
+          </div>
+          <div class="mb-3">
+            <label for="end" class="form-label">Año de finalización</label>
+            <input type="text" class="form-control" id="end" aria-describedby="endHelp" formControlName="end">
+            <div id="emailHelp" class="form-text">Indicar año</div>
+          </div>
+          <div class="mb-3">
+            <label for="career" class="form-label">Carrera</label>
+            <input type="text" class="form-control" id="career" aria-describedby="careerHelp" formControlName="career">
+            <div id="careerHelp" class="form-text">Indicar career</div>
+          </div>
+          <div class="mb-3">
+            <label for="img" class="form-label">Imagen educacion</label>
+            <input type="text" class="form-control" id="img" aria-describedby="imgHelp" formControlName="img">
           </div>
         </form>
       </div>
@@ -60,3 +90,88 @@
       </div>
     </div>
   </div>
+</div>
+<!-- Modal Crear educacion-->
+<div class="modal fade" id="modalCrearEducacion" tabindex="-1" aria-labelledby="modalCrearEducacion" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Crear educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" ng-submit="">
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" aria-describedby="idHelp" formControlName="id">
+          </div>
+          <div class="mb-3">
+            <label for="idPersona" class="form-label">Id Persona</label>
+            <input type="text" class="form-control" id="idPersona" aria-describedby="idPersonaHelp"
+              formControlName="idPersona">
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input type="text" class="form-control" id="title" aria-describedby="titleHelp" formControlName="title">
+          </div>
+          <div class="mb-3">
+            <label for="school" class="form-label">Entidad educativa</label>
+            <input type="text" class="form-control" id="school" aria-describedby="schoolHelp" formControlName="school">
+          </div>
+          <div class="mb-3">
+            <label for="start" class="form-label">Año de inicio</label>
+            <input type="text" class="form-control" id="start" aria-describedby="startHelp" formControlName="start">
+          </div>
+          <div class="mb-3">
+            <label for="end" class="form-label">Año de finalización</label>
+            <input type="text" class="form-control" id="end" aria-describedby="endHelp" formControlName="end">
+            <div id="emailHelp" class="form-text">Indicar año</div>
+          </div>
+          <div class="mb-3">
+            <label for="career" class="form-label">Carrera</label>
+            <input type="text" class="form-control" id="career" aria-describedby="careerHelp" formControlName="career">
+            <div id="careerHelp" class="form-text">Indicar career</div>
+          </div>
+          <div class="mb-3">
+            <label for="img" class="form-label">Imagen educacion</label>
+            <input type="text" class="form-control" id="img" aria-describedby="imgHelp" formControlName="img">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalCrearEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+        <button type="button" class="btn btn-primary" (click)="crearEducacion(educacion)">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal alerta eliminar educación
+<div class="modal fade" id="modalAlerta" tabindex="-1" aria-labelledby="modalAlerta" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Crear educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" ng-submit="">
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" class="form-control" id="id" aria-describedby="idHelp" formControlName="id">
+          </div>
+          <div class="mb-3">
+            <label for="idPersona" class="form-label">Id Persona</label>
+            <input type="text" class="form-control" id="idPersona" aria-describedby="idPersonaHelp"
+              formControlName="idPersona">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalCrearEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+        <button type="button" class="btn btn-primary" (click)="crearEducacion(educacion)">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div> 
+-->

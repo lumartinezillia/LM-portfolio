@@ -5,11 +5,10 @@
       <div class="col">
         <h2>{{item.job}}</h2>
         <p>{{item.company}}</p>
-        <p>Desde: {{item.start}}</p>
-        <p>Hasta: {{item.end}}</p>
+        <p>{{item.start}} - {{item.end}}</p>
       </div>
       <div class="col"><button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-          data-bs-target="#modalExperiencia" (click)="mostrarDatosExperiencia()">Editar</button> </div>
+          data-bs-target="#modalExperiencia" (click)="mostrarDatosExperiencia(item)">Editar</button> </div>
     </div>
   </div>
 </section>
@@ -20,7 +19,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar experiencias</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar experiencia</h5>
         <!--bottón cerrar-->
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>

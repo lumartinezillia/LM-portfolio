@@ -6,13 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class PersonaService implements IPersonaService {
 
     @Autowired
     PersonaRepository personaRepository;
-    
+
     @Override
     public void crearPersona(Persona persona) {
         personaRepository.save(persona);
@@ -22,20 +21,19 @@ public class PersonaService implements IPersonaService {
     public void borrarPersona(Long id) {
         personaRepository.deleteById(id);
     }
-    
+
     @Override
     public List<Persona> listarPersonas() {
         return personaRepository.findAll();
     }
-
+    
     @Override
-        public void modificarPersona(Long id) {
-       
+    public Persona obtenerPersona(Long id) {
+        return personaRepository.findById(id).orElse(null);
     }
-
+    
     @Override
-    public Persona buscarPersonaPorId(Long id) {
-       personaRepository.findById(id);
-        return null;
+    public void modificarPersona(Persona persona) {
+        personaRepository.save(persona);
     }
 }

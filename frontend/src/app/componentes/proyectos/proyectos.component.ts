@@ -47,10 +47,10 @@ export class ProyectosComponent implements OnInit {
     }
   }
 
-  mostrarDatosProyectos() {
-    this.form.get("proyect")?.setValue(this.proyecto.proyect);
-    this.form.get("technologies")?.setValue(this.proyecto.technologies);
-    this.form.get("year")?.setValue(this.proyecto.year);
+  mostrarDatosProyectos(item: Proyecto) {
+    this.form.get("proyect")?.setValue(item.proyect);
+    this.form.get("technologies")?.setValue(item.technologies);
+    this.form.get("year")?.setValue(item.year);
 
   }
 }

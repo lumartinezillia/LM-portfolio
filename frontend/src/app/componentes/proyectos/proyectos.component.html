@@ -8,7 +8,7 @@
         <p>{{item.year}}</p>
       </div>
       <div class="col"><button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-          data-bs-target="#modalProyectos" (click)="mostrarDatosProyectos()">Editar</button>
+          data-bs-target="#modalProyectos" (click)="mostrarDatosProyectos(item)">Editar</button>
       </div>
     </div>
   </div>

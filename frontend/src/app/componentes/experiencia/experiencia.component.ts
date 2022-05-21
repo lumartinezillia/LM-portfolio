@@ -53,11 +53,11 @@ export class ExperienciaComponent implements OnInit {
   }
 
   // este método está linkeado por data binding al botón de Editar en el html (para cargar el formulario cargado)
-  mostrarDatosExperiencia() {
-    this.form.get("job")?.setValue(this.experiencia.job);
-    this.form.get("company")?.setValue(this.experiencia.company);
-    this.form.get("start")?.setValue(this.experiencia.start);
-    this.form.get("end")?.setValue(this.experiencia.end);
+  mostrarDatosExperiencia(item: Experiencia) {
+    this.form.get("job")?.setValue(item.job);
+    this.form.get("company")?.setValue(item.company);
+    this.form.get("start")?.setValue(item.start);
+    this.form.get("end")?.setValue(item.end);
   }
 
   //Propiedades

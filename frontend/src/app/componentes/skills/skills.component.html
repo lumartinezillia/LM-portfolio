@@ -3,8 +3,12 @@
   <div class="container-fluid">
     <div *ngFor="let item of skills" class="row mb-3">
       <div class="col">
-        <h2>{{item.skill}}</h2>
-        <p>{{item.percentage}}</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="30"
+               aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+            <span class="sr-only">{{item.skill}} - {{item.percentage}} %</span>
+          </div>
+        </div>
       </div>
       <div class="col"><button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
         data-bs-target="#modalSkills" (click)="mostrarDatosSkills()">Editar</button> </div>

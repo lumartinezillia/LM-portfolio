@@ -16,20 +16,24 @@ public class Persona {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     long id;
     @Basic
-    String name;
-    String lastname;
-    String ubication;
+    String fullName;
     String position;
+    String ubication;
+    String aboutMe;
+    String image;
+    String mail;
 
-        public Persona() {
+    public Persona() {
     }
         
-    public Persona(long id, String name, String lastname, String ubication, String position) {
+    public Persona(long id, String fullName, String ubication, String position, String aboutMe, String image, String mail) {
         this.id = id;
-        this.name = name;
-        this.lastname = lastname;
+        this.fullName = fullName;
         this.ubication = ubication;
         this.position = position;
+        this.aboutMe = aboutMe;
+        this.image = image;
+        this.mail = mail;
     }
 
 

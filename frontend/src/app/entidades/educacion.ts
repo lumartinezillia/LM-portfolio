@@ -1,17 +1,25 @@
 export class Educacion {
+  
+
+    id:number;
     title: string;
     school: string;
-    start: string;
-    end: string;
+    start: number;
+    end: number;
+    img:string;
+    career: string;
+    idPersona:number;
 
-    constructor(title: string,  school: string, start: string, end: string) {
-        this.title = title;
-        this.school = school;
-        this.start = start;
-        this.end = end;
+    constructor (id:number,title:string,school:string, img:string,start:number,end:number, career:string , idPersona:number )
+    {
+        this.id=id;
+        this.title=title;   
+        this.school=school;
+        this.img=img;
+        this.start=start;
+        this.end=end;
+        this.career=career;
+        this.idPersona=idPersona;
     }
-
-    //pasar los atributos a privados y armar los setters y getters
-
 
 }
