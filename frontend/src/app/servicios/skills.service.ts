@@ -8,13 +8,19 @@ import { Skill } from '../entidades/skill';
 })
 export class SkillsService {
 
-  constructor(private httpService: HttpClient) { }
+  url:string="http://localhost:8080/skill";
+
+  constructor(private httpService: HttpClient) {}
 
   obtenerDatosSkills(): Observable<any> {
-    return this.httpService.get('./assets/data/skills.json');
+    return this.httpService.get<Skill[]>(this.url + "/1");
   }
 
-  editarDatosSkills(skills: Skill): Observable<any> {
-    return this.httpService.post('http://localhost:3000/posts', skills);
+  editarDatosSkill(skill: Skill): Observable<any> {
+    return this.httpService.put(this.url, skill);
+  }
+
+  eliminarSkill(id:number): Observable<any>{
+  return this.httpService.delete(this.url+"/"+id);
   }
 }

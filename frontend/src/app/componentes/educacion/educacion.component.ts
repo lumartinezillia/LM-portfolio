@@ -45,7 +45,7 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  mostrarDatosEducacion(item: Educacion) {
+  public mostrarDatosEducacion(item: Educacion) {
     this.form.get("id")?.setValue(item.id);
     this.form.get("img")?.setValue(item.img);
     this.form.get("title")?.setValue(item.title);
@@ -54,11 +54,9 @@ export class EducacionComponent implements OnInit {
     this.form.get("career")?.setValue(item.career);
     this.form.get("end")?.setValue(item.end);
     this.form.get("idPersona")?.setValue(item.idPersona);
-
-
   }
 
-  guardarEducacion() {
+  public guardarEducacion() {
     if (this.form.valid) {
       console.log("ok1");
       let id = this.form.controls["id"].value;
@@ -97,11 +95,11 @@ export class EducacionComponent implements OnInit {
   }
 
   //  CREAR EDUCACION
-  crearEducacion(educacionCrear: Educacion) {
+  public crearEducacion(educacionCrear: Educacion) {
     if (this.form.valid) {
       console.log("ok1");
       let id = this.form.controls["id"].value;
-      let idPersona = this.form.controls["idPersona"].value;
+      let idPersona = 1;
       let title = this.form.controls["title"].value;
       let school = this.form.controls["school"].value;
       let start = this.form.controls["start"].value;

@@ -1,17 +1,30 @@
 <section>
-  <h1>Hard & Soft Skills</h1>
+  <div class="container-fluid ">
+    <div class="row mb-3">
+      <div class="col">
+        <h1>Hard & Soft Skills</h1>
+      </div>
+      <div class="col">
+        <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
+          data-bs-target="#modalCrearSkill">Crear Skill</button>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
-    <div *ngFor="let item of skills" class="row mb-3">
+    <div *ngFor="let item of skill" class="row mb-3">
       <div class="col">
         <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="30"
-               aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+          <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
+            style="width: 30%;">
             <span class="sr-only">{{item.skill}} - {{item.percentage}} %</span>
           </div>
         </div>
       </div>
       <div class="col"><button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-        data-bs-target="#modalSkills" (click)="mostrarDatosSkills()">Editar</button> </div>
+          data-bs-target="#modalSkills" (click)="mostrarDatosSkills(item)">Editar</button>
+        <button *ngIf="usuarioAutenticado" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+          data-bs-target="#modalAlerta" (click)="eliminarSkill(item)">Eliminar</button>
+      </div>
     </div>
   </div>
 </section>
@@ -21,7 +34,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar educación</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar skills</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -49,3 +62,32 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal Crear skills-->
+<div class="modal fade" id="modalCrearSkill" tabindex="-1" aria-labelledby="modalCrearSkill" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Crear educación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form" ng-submit="">
+          <div class="mb-3">
+            <label for="skill" class="form-label">Skill</label>
+            <input type="text" class="form-control" id="skill" aria-describedby="skillHelp" formControlName="skill">
+          </div>
+          <div class="mb-3">
+            <label for="percentage" class="form-label">Porcentaje de conocimiento</label>
+            <input type="text" class="form-control" id="percentage" aria-describedby="percentageHelp" formControlName="percentage">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalCrearSkill" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+        <button type="button" class="btn btn-primary" (click)="crearSkill(skill)">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

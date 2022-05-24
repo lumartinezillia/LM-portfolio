@@ -1,8 +1,8 @@
 
 package com.myApiLM.SpringBoot.Controller;
 
-import com.myApiLM.SpringBoot.Model.Educacion;
-import com.myApiLM.SpringBoot.Service.EducacionService;
+import com.myApiLM.SpringBoot.Model.Proyecto;
+import com.myApiLM.SpringBoot.Service.ProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200/"})
-public class EducacionController {
+public class ProyectoController {
    
 @Autowired 
-EducacionService educacionService;
+ProyectoService proyectoService;
 
-@GetMapping("/educacion/{idPersona}")
-public List<Educacion> obtenerRegistrosEducacion(@PathVariable Long idPersona){
-     return educacionService.obtenerRegistrosEducacion(idPersona);
+@GetMapping("/proyecto/{idPersona}")
+public List<Proyecto> obtenerRegistrosProyecto(@PathVariable Long idPersona){
+     return proyectoService.obtenerRegistrosProyecto(idPersona);
  } 
 
-@DeleteMapping("/educacion/{id}")
-public void eliminarEducacion(@PathVariable Long id){
-    educacionService.eliminarEducacion(id);
+@DeleteMapping("/proyecto/{id}")
+public void eliminarProyecto(@PathVariable Long id){
+    proyectoService.eliminarProyecto(id);
 }
-@PutMapping("/educacion")
-    public void modificarEducacion(@RequestBody Educacion educacion) {
-        educacionService.modificarEducacion(educacion);
+@PutMapping("/proyecto")
+    public void modificarProyecto(@RequestBody Proyecto proyecto) {
+        proyectoService.modificarProyecto(proyecto);
     }
     
 }

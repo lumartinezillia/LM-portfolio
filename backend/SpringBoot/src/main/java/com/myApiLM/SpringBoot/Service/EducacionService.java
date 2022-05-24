@@ -2,7 +2,6 @@
 package com.myApiLM.SpringBoot.Service;
 
 import com.myApiLM.SpringBoot.Model.Educacion;
-import com.myApiLM.SpringBoot.Model.Persona;
 import com.myApiLM.SpringBoot.Repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -14,5 +14,4 @@ public interface IPersonaService {
     public void modificarPersona(Persona persona);
 
     public Persona obtenerPersona(Long id);
-
 }

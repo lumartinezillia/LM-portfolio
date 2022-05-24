@@ -1,8 +1,8 @@
 
 package com.myApiLM.SpringBoot.Controller;
 
-import com.myApiLM.SpringBoot.Model.Educacion;
-import com.myApiLM.SpringBoot.Service.EducacionService;
+import com.myApiLM.SpringBoot.Model.Skill;
+import com.myApiLM.SpringBoot.Service.SkillService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200/"})
-public class EducacionController {
+public class SkillController {
    
 @Autowired 
-EducacionService educacionService;
+SkillService skillService;
 
-@GetMapping("/educacion/{idPersona}")
-public List<Educacion> obtenerRegistrosEducacion(@PathVariable Long idPersona){
-     return educacionService.obtenerRegistrosEducacion(idPersona);
+@GetMapping("/skill/{idPersona}")
+public List<Skill> obtenerRegistrosSkill(@PathVariable Long idPersona){
+     return skillService.obtenerRegistrosSkill(idPersona);
  } 
 
-@DeleteMapping("/educacion/{id}")
-public void eliminarEducacion(@PathVariable Long id){
-    educacionService.eliminarEducacion(id);
+@DeleteMapping("/skill/{id}")
+public void eliminarSkill(@PathVariable Long id){
+    skillService.eliminarSkill(id);
 }
-@PutMapping("/educacion")
-    public void modificarEducacion(@RequestBody Educacion educacion) {
-        educacionService.modificarEducacion(educacion);
+@PutMapping("/skill")
+    public void modificarSkill(@RequestBody Skill skill) {
+        skillService.modificarSkill(skill);
     }
     
 }

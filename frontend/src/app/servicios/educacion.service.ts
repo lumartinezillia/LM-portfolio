@@ -8,10 +8,10 @@ import { Educacion } from '../entidades/educacion';
 })
 export class EducacionService {
 
-  url:string="http://localhost:8080/educacion";
+  url: string = "http://localhost:8080/educacion";
   constructor(private httpService: HttpClient) { }
 
-  obtenerDatosEducacion():Observable<Educacion[]>{
+  obtenerDatosEducacion(): Observable<Educacion[]> {
     return this.httpService.get<Educacion[]>(this.url + "/1");
   }
 
@@ -19,9 +19,9 @@ export class EducacionService {
     return this.httpService.put(this.url, educacion);
   }
 
-  eliminarEducacion(id:number): Observable<any>{
-  return this.httpService.delete(this.url+"/"+id);
+  eliminarEducacion(id: number): Observable<any> {
+    return this.httpService.delete(this.url + "/" + id);
   }
 
-  
+
 }
