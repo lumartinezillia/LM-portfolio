@@ -12,7 +12,7 @@
   </div>
   <div class="container-fluid ">
     <div *ngFor="let item of educacion" class="row mb-3">
-      <div class="col-2">
+      <div class="col-1">
         <img [src]="item.img" style="background-color: rgb(81, 146, 124);" class="img-fluid" alt="Imágen estudio 1 Argentina Programa -
           #YoProgramo.">
       </div>
@@ -22,7 +22,7 @@
         <p>{{item.start}} - {{item.end}}</p>
         <p></p>
       </div>
-      <div class="col">
+      <div class="col-6">
         <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
           data-bs-target="#modalEducacion" (click)="mostrarDatosEducacion(item)">Editar</button>
         <button *ngIf="usuarioAutenticado" class="btn btn-danger btn-sm" data-bs-toggle="modal"

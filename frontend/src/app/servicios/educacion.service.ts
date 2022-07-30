@@ -8,7 +8,7 @@ import { Educacion } from '../entidades/educacion';
 })
 export class EducacionService {
 
-  url: string = "http://localhost:8080/educacion";
+  url: string = "https://backendheroku-ap.herokuapp.com/educacion";
   constructor(private httpService: HttpClient) { }
 
   obtenerDatosEducacion(): Observable<Educacion[]> {

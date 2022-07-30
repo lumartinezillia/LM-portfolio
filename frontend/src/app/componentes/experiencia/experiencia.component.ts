@@ -80,6 +80,7 @@ export class ExperienciaComponent implements OnInit {
 //  CREAR Experiencia
 public crearExperiencia(experienciaCrear: Experiencia) {
   if (this.form.valid) {
+    this.form.reset();
     let id = this.form.controls["id"].value;
     let idPersona = 1;
     let job = this.form.controls["job"].value;

@@ -8,7 +8,7 @@ import { Skill } from '../entidades/skill';
 })
 export class SkillsService {
 
-  url:string="http://localhost:8080/skill";
+  url:string="https://backendheroku-ap.herokuapp.com/skill";
 
   constructor(private httpService: HttpClient) {}
 

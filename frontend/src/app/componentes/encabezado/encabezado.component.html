@@ -1,39 +1,30 @@
-<header>
-    <nav class="navbar navbar-default navbar-expand-lg col-md-12" role="navigation" id="portfolioNavBar">
-        <div class="container-fluid">
-            <a class="navbar-brand" target="_blank"
-                href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"><img
-                    src="./assets/imagenes/APLogo-20-20.png" style="width: 20%;" alt="Argentina Programa -
-      #YoProgramo."></a>
-            <ul class="nav navbar-nav navbar-right">
-                <a href="#" class="nav-enlace">. GH .<i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="nav-enlace">. LI .<i class="fa-brands fa-linkedin-in"></i></a>
-                <li><a href="#" class="nav-enlace"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>
+<section>
     <div class="containerdiv container-fluid" style="position: relative; left: 0; top: 0;">
-        <img class="banner" src="./assets/imagenes/banner1.jpg" style="width:100%; height:400px;"
-            alt="Foto de portada" />
-        <img class="cornerimage" [src]="persona.image" style="width: 220px; height:220px;"
-            alt="Foto de Lucia Martinez" />
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 id="fullName"><strong>{{persona.fullName}}</strong></h1>
-            <p id="position"><strong>{{persona.position}} </strong> </p>
-            <p id="ubication">{{persona.ubication}}</p>
-            <p id="mail">{{persona.mail}}</p>
-            <p id="aboutMe">{{persona.aboutMe}}</p>
-        </div>
-        <div class="col"> <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
-                data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
-            <!--al botón se le agrega el método mostrar datos por databinding -->
+        <div class="row mb-3">
+            <img class="banner" src="./assets/imagenes/banner2.jfif" style="width:100%; height:400px;"
+                alt="Foto de portada" />
+            <img class="cornerimage" [src]="persona.image" style="width: 220px; height:220px;"
+                alt="Foto de Maria Gonzalez" />
         </div>
     </div>
-</header>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col">
+                <h1 id="fullName"><strong>{{persona.fullName}}</strong></h1>
+                <p id="position"><strong>{{persona.position}} </strong> </p>
+                <p id="ubication">{{persona.ubication}}</p>
+                <p id="mail">{{persona.mail}}</p>
+                <p id="aboutMe">{{persona.aboutMe}}</p>
+            </div>
+            <div class="col"> <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#modalEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
+                <!--al botón se le agrega el método mostrar datos por databinding -->
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Modal -->
+<!-- Modal Encabezado -->
 <div class="modal fade" id="modalEncabezado" tabindex="-1" aria-labelledby="modalEncabezado" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -42,7 +33,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="form" >
+                <form [formGroup]="form">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Apellido y Nombre</label>
                         <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp"
@@ -117,3 +108,4 @@
             </div>
         </div>
     </div>
+</div>

@@ -13,6 +13,8 @@ export class EncabezadoComponent implements OnInit {
   persona!: Persona;
   usuarioAutenticado: boolean = true;
   form!: FormGroup;
+  datosLogin: any;
+
 
   constructor(private miServicio: PersonaService, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
@@ -31,6 +33,7 @@ export class EncabezadoComponent implements OnInit {
       this.persona = data;
     });
   }
+
 
   guardarEncabezado() {
     if (this.form.valid) {
@@ -89,4 +92,6 @@ export class EncabezadoComponent implements OnInit {
 function msg(msg: any, any: any) {
   throw new Error('Function not implemented.');
 }
+
+
 

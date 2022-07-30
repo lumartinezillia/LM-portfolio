@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: monospace;
-  background-color: linen;
+  background-color: rgb(252, 188, 124);
   margin: 10px;
   align-content:center;
 }
@@ -47,18 +47,22 @@ p {
   margin-left: 4px;
 }
 
+nav-enlace{
+  margin-right: 13px;
+}
+
 /* Color Theme Swatches in Hex */
 .Humans-1-hex {
-  color: #f2e74b;
+  color: #555550;
 }
 .Humans-2-hex {
-  color: #f2c53d;
+  color: #c4c2bd;
 }
 .Humans-3-hex {
-  color: #f2d16d;
+  color: #6e6b62;
 }
 .Humans-4-hex {
-  color: #f2dbae;
+  color: #4d4942;
 }
 .Humans-5-hex {
   color: #d97236;

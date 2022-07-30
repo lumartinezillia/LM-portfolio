@@ -11,6 +11,7 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { FooterComponent } from './componentes/footer/footer.component';
 import {HttpClientModule} from  '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './componentes/login/login.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

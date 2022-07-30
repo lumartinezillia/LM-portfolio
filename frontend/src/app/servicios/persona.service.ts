@@ -8,7 +8,7 @@ import { Persona } from '../entidades/persona';
 })
 export class PersonaService {
 
-  url: string="http://localhost:8080/persona";
+  url: string="https://backendheroku-ap.herokuapp.com/persona";
 
   constructor(private httpService: HttpClient) {
     console.log("El servicio de persona está corriendo");

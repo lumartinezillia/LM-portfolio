@@ -73,28 +73,19 @@ export class ProyectosComponent implements OnInit {
 
   //  CREAR PROYECTOS
   public crearProyecto(proyectoCrear: Proyecto) {
+    this.form.reset();
     if (this.form.valid) {
-      console.log("ok1");
       let id = this.form.controls["id"].value;
       let idPersona = 1;
       let project = this.form.controls["project"].value;
       let technologies = this.form.controls["technologies"].value;
       let year = this.form.controls["year"].value;
       let proyectoCrear = new Proyecto(id, project, technologies, year,  idPersona);
-      console.log("ok2");
-
       this.miServicio.editarDatosProyecto(proyectoCrear).subscribe(data => {
-        // FALTA modificar el encabezado con los nuevos datos.
-        console.log("ok3");
-        console.log(proyectoCrear);
-
         this.proyecto = proyectoCrear;
-        console.log("ok4");
-
         this.form.reset();
         document.getElementById("cerrarModalCrearProyecto")?.click();
         window.location.reload();
-
       },
         error => {
           alert("Ups no se pudo actiualizar. Por favor, intente nuevamente o contacte al administrador");
@@ -105,5 +96,4 @@ export class ProyectosComponent implements OnInit {
       alert("Hay campos no válidos");
     }
   }
-
 }

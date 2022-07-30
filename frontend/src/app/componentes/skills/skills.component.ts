@@ -72,6 +72,7 @@ export class SkillsComponent implements OnInit {
   //  CREAR SKILLS
   public crearSkill(skillCrear: Skill) {
     if (this.form.valid) {
+      this.form.reset();
       let id = this.form.controls["id"].value;
       let idPersona = 1;
       let skill = this.form.controls["skill"].value;

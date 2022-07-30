@@ -1,0 +1,68 @@
+<header>
+<div class="container-fluid ">
+        <nav class="navbar navbar-default navbar-expand-lg col-md-12" role="navigation" id="portfolioNavBar">
+            <div class="container-fluid">
+                <a class="navbar-brand" target="_blank"
+                    href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"><img
+                        src="./assets/imagenes/APLogo-20-20.png" style="width: 20%;" alt="Argentina Programa -
+      #YoProgramo."></a>
+                <div class="nav navbar-nav navbar-right">
+                    <button href="https://github.com/" class="btn btn-dark btn-md" target="_blank">.GitHub.</button>
+                    <button href="https://instagram.com/" class="btn btn-dark btn-md" target="_blank">.LnkedIn.</button>
+                    <button *ngIf="usuarioAutenticado" class="btn btn-dark btn-md" data-bs-toggle="modal"
+                        data-bs-target="#modalLogin" (click)="mostrarDatosLogin()">.Login.</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Modal Login -->
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLogin" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Ingrese sus credenciales para acceder</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formLogin">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">fullName</label>
+                        <input type="text" class="form-control" id="fullName" aria-describedby="idHelp" formControlName="fullName">
+                        <!--<div *ngIf="fullName?.invalid && (fullName?.dirty || fullName?.touched)">
+                        <div *ngIf="fullName?.errors?.['required']" class="text-danger">
+                            El Apellido y Nombre es obligatorio.
+                        </div>
+                    </div> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            formControlName="position">
+                        <!--<div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                        <div *ngIf="email?.errors?.['required']" class="text-danger">
+                            el email es obligatorio
+                        </div>
+                    </div>-->
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" aria-describedby="passwordHelp"
+                            formControlName="password">
+                        <!-- <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                        <div *ngIf="password?.errors?.['required']" class="text-danger">
+                            la contraseña actual es obligatoria
+                        </div>
+                    </div>-->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cerrarModalLogin" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-primary" (click)="guardarLogin()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
