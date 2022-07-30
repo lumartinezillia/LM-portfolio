@@ -52,7 +52,7 @@ export class ProyectosComponent implements OnInit {
 
   guardarProyectos() {
     if (this.form.valid) {
-      let proyectoEditar = new Proyecto(this.form.controls["id"].value,this.form.controls["proyect"].value, this.form.controls["technologies"].value,
+      let proyectoEditar = new Proyecto(this.form.controls["id"].value,this.form.controls["project"].value, this.form.controls["technologies"].value,
         this.form.controls["year"].value, this.form.controls["idPersona"].value);
       this.miServicio.editarDatosProyecto(proyectoEditar).subscribe(data => {
         // FALTA modificar el encabezado con los nuevos datos.
