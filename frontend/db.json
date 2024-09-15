@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullName": "Santi Korovsky",
+      "position": "músico",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 2
+    },
+    {
+      "fullName": "Santi Korovsky TEST",
+      "position": "músicoTEST",
+      "ubication": "ucrania",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 3
+    },
+    {
+      "fullName": "Santi Korovsky",
+      "position": "músico",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 4
+    },
+    {
+      "fullName": "Santi Korovsky",
+      "position": "ratón",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 5
+    },
+    {
+      "fullName": "Santi O Korovsky",
+      "position": "músico frontend",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 6
+    },
+    {
+      "job": "Recepcionista",
+      "company": "Hotel",
+      "start": "2012",
+      "end": "2015",
+      "id": 7
+    },
+    {
+      "fullName": "Santi Korovsky",
+      "position": "pediatra",
+      "ubication": "Buenos Aires tokio",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 8
+    },
+    {
+      "title": "qwe",
+      "school": "qewr",
+      "start": "425",
+      "end": "42",
+      "id": 9
+    },
+    {
+      "title": "qwe",
+      "school": "qewr",
+      "start": "425",
+      "end": "42",
+      "id": 10
+    },
+    {
+      "title": "qwe",
+      "school": "qewr",
+      "start": "425",
+      "end": "42",
+      "id": 11
+    },
+    {
+      "fullName": "Santi Korovsky",
+      "position": "pediatras",
+      "ubication": "Buenos Aires (Argentina)",
+      "image": "./assets/imagenes/foto de perfil.jpg",
+      "id": 12
+    },
+    {
+      "job": "nuevo puesto",
+      "company": "una empresa",
+      "start": "2000",
+      "end": "2001",
+      "id": 13
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
